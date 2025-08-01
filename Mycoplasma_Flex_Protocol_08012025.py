@@ -82,13 +82,13 @@ def run(protocol: protocol_api.ProtocolContext):
     sample_tubes = [protocol.define_liquid(name = f'Sample {i + 1}', display_color="#FFA000",) for i in range(protocol.params.num_samples)]
 
 
-    # Assign sample/liquid positions
-    temp_adapter['A1'].load_liquid(liquid=mastermix, volume=1000)  # 20 mg/ml BSA standard
-    temp_adapter['A2'].load_liquid(liquid=primer_mix, volume=1000)  # Additional lysis buffer for SP3
-    temp_adapter['A3'].load_liquid(liquid=nuclease_free_water, volume=1000)  # 20 mg/ml BSA standard
-    temp_adapter['A4'].load_liquid(liquid=positive_control, volume=1000)  # Additional lysis buffer for SP3
-    temp_adapter['A5'].load_liquid(liquid=neg_control, volume=1000)  # 20 mg/ml BSA standard
-    temp_adapter['A6'].load_liquid(liquid=empty_epp, volume=1000)  # 20 mg/ml BSA standard
+    # Assign sample/liquid positions on the Temp Module/Adapter
+    temp_adapter['A1'].load_liquid(liquid=mastermix, volume=1000) 
+    temp_adapter['A2'].load_liquid(liquid=primer_mix, volume=1000) 
+    temp_adapter['A3'].load_liquid(liquid=nuclease_free_water, volume=1000) 
+    temp_adapter['A4'].load_liquid(liquid=positive_control, volume=1000)  
+    temp_adapter['A5'].load_liquid(liquid=neg_control, volume=1000)  
+    temp_adapter['A6'].load_liquid(liquid=empty_epp, volume=1000)  
     reservoir['A2'].load_liquid(liquid=loading_buff, volume=5000)
     
     #open the thermocycler lid
